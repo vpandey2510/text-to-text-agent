@@ -14,7 +14,7 @@ A minimal Python script that sends a prompt to a Hugging Face–hosted model via
 2. Install dependencies:
 
    ```bash
-   pip install openai
+   pip install openai python-dotenv
    ```
 
 3. Create your local environment file from the example:
@@ -29,16 +29,12 @@ A minimal Python script that sends a prompt to a Hugging Face–hosted model via
    HF_API_KEY=hf_your_token_here
    ```
 
-5. Export the variable before running (the script reads `HF_API_KEY` from the environment):
+5. Save `.env` in this folder. The script loads it automatically via `python-dotenv`.
 
-   ```bash
-   export HF_API_KEY="$(grep -v '^#' .env | cut -d= -f2-)"
+   Use this format (no spaces around `=`):
+
    ```
-
-   On macOS/Linux you can also run:
-
-   ```bash
-   set -a && source .env && set +a
+   HF_API_KEY=hf_your_token_here
    ```
 
    `.env` is listed in `.gitignore` and will not be committed.

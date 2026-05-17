@@ -1,6 +1,9 @@
 import os
+
+from dotenv import load_dotenv
 from openai import OpenAI
 
+load_dotenv()
 
 HF_API_KEY = os.getenv("HF_API_KEY")
 
