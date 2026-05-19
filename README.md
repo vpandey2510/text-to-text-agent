@@ -47,16 +47,29 @@ python3 text-agent.py
 
 The script calls `deepseek-ai/DeepSeek-V4-Pro:novita` through the Hugging Face router and prints the model response.
 
-To change the prompt or model, edit `text-agent.py`.
+To change the prompt or model, edit `text-agent.py` or pass arguments to `main()`.
+
+## Tests
+
+Install dev dependencies and run unit tests (API calls are mocked):
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
 
 ## Project layout
 
 ```
 .
-├── .env.example    # Template for secrets (safe to commit)
-├── .gitignore      # Ignores .env and Python cache files
+├── .env.example         # Template for secrets (safe to commit)
+├── .gitignore           # Ignores .env and Python cache files
 ├── README.md
-└── text-agent.py   # Main script
+├── requirements-dev.txt
+├── tests/
+│   ├── conftest.py
+│   └── test_text_agent.py
+└── text-agent.py        # Main script
 ```
 
 ## Security
